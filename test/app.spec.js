@@ -1,10 +1,9 @@
-
 const app = require('../src/app')
 
-describe('App', () => {
-    it('GET / responds with 200 containing "Hello, world!"', () => {
+describe('Server is running', () => {
+    it('GET /health responds with 200 containing "Server is active"', () => {
         return supertest(app)
-            .get('/')
-            .expect(200, 'Hello, world!')
+            .get('/health')
+            .expect(200, 'Server is active')
     })
 })
