@@ -12,7 +12,7 @@ CREATE TABLE users (
     joindate DATE DEFAULT now(),
     isadmin BOOLEAN NOT NULL DEFAULT FALSE,
     email TEXT DEFAULT '',
-    userlocation TEXT DEFAULT ''
+    pickuplocation TEXT DEFAULT ''
 );
 
 CREATE TABLE recyclables(

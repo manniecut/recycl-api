@@ -1,7 +1,7 @@
 const express = require('express');
 const FeedbackService = require('./feedback-service');
 
-const feedbackRouter = experss.Router();
+const feedbackRouter = express.Router();
 const jsonParser = express.json();
 
 feedbackRouter

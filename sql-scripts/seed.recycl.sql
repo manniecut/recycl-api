@@ -10,7 +10,7 @@ INSERT INTO users (
         username,
         pass,
         email,
-        userlocation
+        pickuplocation
     )
 VALUES (
         'Mannie',

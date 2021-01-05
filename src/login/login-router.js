@@ -1,7 +1,7 @@
 const express = require('express');
 const LoginService = require('./login-service');
 
-const loginRouter = experss.Router();
+const loginRouter = express.Router();
 const jsonParser = express.json();
 
 loginRouter
