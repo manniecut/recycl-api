@@ -1,22 +1,29 @@
 const RecyclablesService = {
 
-    // Get the user's info from DB
-    getUser: (db, username) => {
-      return (
-        db('users')
-          .where({ username })
-          .first()
-      );
-    },
-  
-    // Compare passwords
-    comparePasswords: (password, dbpass) => {
-      if (password === dbpass) {
-       return "match"
-      } else {
-        return "no match"
-      }
-    }
-  };
-  
-  module.exports = RecyclablesService;
+  // retrieve all recyclables from DB
+  getAllRecs(knex) {
+    return knex
+      .select('*')
+      .from('recyclables');
+  },
+
+  // Get the user's info from DB
+  insertRec(knex, newRec) {
+    return knex
+      .insert(newRec)
+      .into('recyclables')
+      .returning('*')
+      .then(rows => {
+        return rows[0]
+      });
+  },
+
+  // Compare passwords
+  deleteRec(knex, id) {
+    return knex('recyclables')
+      .where({ id })
+      .delete();
+  }
+}
+
+module.exports = RecyclablesService;
