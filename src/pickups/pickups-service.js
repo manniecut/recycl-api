@@ -26,6 +26,13 @@ const PickupsService = {
       .first()
   },
 
+    // Get pickup info from DB by userID
+    getPickupByUserId(knex, userid) {
+      return knex
+        .from('pickups')
+        .where('client', userid)
+    },
+
   // delete pickup by ID
   deletePickup(knex, id) {
     return knex('pickups')

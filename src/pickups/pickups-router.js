@@ -37,16 +37,16 @@ pickupsRouter
     })
 
 pickupsRouter
-    .route('./:pickupid')
+    .route('/:userid')
     .all((req, res, next) => {
-        PickupsService.getPickupById(
+        PickupsService.getPickupByUserId(
             req.app.get('db'),
-            req.params.pickupid
+            req.params.userid
         )
         .then(pickup => {
             if (!pickup) {
                 return res.status(404).json({
-                    error: { message: `Pickup doesn't exist` }
+                    error: { message: `Pickups don't exist` }
                 })
             }
             res.pickup = pickup
@@ -57,15 +57,15 @@ pickupsRouter
     .get((req, res, next) => {
         res.json(res.pickup)
     })
-    .delete((req, res, next) => {
-        PickupsService.deletePickup(
-            req.app.get('db'),
-            req.params.pickupid
-        )
-        .then(numRowsAffected => {
-            res.status(204).end()
-        })
-        .catch(next)
-    })
+    // .delete((req, res, next) => {
+    //     PickupsService.deletePickup(
+    //         req.app.get('db'),
+    //         req.params.pickupid
+    //     )
+    //     .then(numRowsAffected => {
+    //         res.status(204).end()
+    //     })
+    //     .catch(next)
+    // })
 
 module.exports = pickupsRouter;
