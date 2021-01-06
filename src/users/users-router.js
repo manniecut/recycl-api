@@ -1,9 +1,9 @@
-const express = require('express')
-const xss = require('xss')
-const UsersService = require('./users-service')
+const express = require('express');
+const xss = require('xss');
+const UsersService = require('./users-service');
 
-const usersRouter = express.Router()
-const jsonParser = express.json()
+const usersRouter = express.Router();
+const jsonParser = express.json();
 
 const sterlizeUser = user => ({
     id: user.id,
