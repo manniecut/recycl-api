@@ -32,7 +32,6 @@ const secureResponse = (users) => {
 const secureIndividual = (user) => {
     secureUser = []
     delete user.pass
-    delete user.email
     secureUser.push(user)
     return secureUser
 }
@@ -103,8 +102,8 @@ usersRouter
             .catch(next)
     })
     .patch(jsonParser, (req, res, next) => { // update specific user in DB
-        const { username, pass, email, pickuplocation } = req.body
-        const userToUpdate = { username, pass, email, pickuplocation }
+        const { email, pickuplocation } = req.body
+        const userToUpdate = { email, pickuplocation }
         if (!userToUpdate) // return error if missing
             return res.status(400).json({
                 error: {
@@ -113,7 +112,7 @@ usersRouter
             })
         UsersService.updateUser( // patch user in DB
             req.app.get('db'),
-            req.params.userid,
+            req.params.username,
             userToUpdate
         )
             .then(numRowsAffected => {
