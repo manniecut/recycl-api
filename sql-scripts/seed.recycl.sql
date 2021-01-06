@@ -60,12 +60,66 @@ VALUES (
 
 INSERT INTO pickups (details, pickuplocation, pickupdate, client)
 VALUES (
+    'Plastic',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    1
+),
+(
+    'Plastic',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    2
+),
+(
     'Batteries',
     '1275 Woodward Ave, Detroit, MI 48226',
     '2021-01-31, 17:30',
-
+    3
+),
+(
+    'Batteries',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    4
+),
+(
+    'Batteries',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    5
+),
+(
+    'Electronics',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    6
+),
+(
+    'Paper',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
     1
+),
+(
+    'Batteries',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    6
+),
+(
+    'Plastic',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    2
+),
+(
+    'Metal',
+    '1275 Woodward Ave, Detroit, MI 48226',
+    '2021-01-31, 17:30',
+    6
 );
+
 
 
 
