@@ -43,29 +43,32 @@ pickupsRouter
             req.app.get('db'),
             req.params.userid
         )
-        .then(pickup => {
-            if (!pickup) {
-                return res.status(404).json({
-                    error: { message: `Pickups don't exist` }
-                })
-            }
-            res.pickup = pickup
-            next()
-        })
-        .catch(next)
+            .then(pickup => {
+                if (!pickup) {
+                    return res.status(404).json({
+                        error: { message: `Pickups don't exist` }
+                    })
+                }
+                res.pickup = pickup
+                next()
+            })
+            .catch(next)
     })
     .get((req, res, next) => {
         res.json(res.pickup)
     })
-    // .delete((req, res, next) => {
-    //     PickupsService.deletePickup(
-    //         req.app.get('db'),
-    //         req.params.pickupid
-    //     )
-    //     .then(numRowsAffected => {
-    //         res.status(204).end()
-    //     })
-    //     .catch(next)
-    // })
+
+pickupsRouter
+    .route('/delete/:pickupid')
+    .delete((req, res, next) => {
+        PickupsService.deletePickup(
+            req.app.get('db'),
+            req.params.pickupid
+        )
+            .then(numRowsAffected => {
+                res.status(204).end()
+            })
+            .catch(next)
+    })
 
 module.exports = pickupsRouter;
