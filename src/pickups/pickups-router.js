@@ -1,5 +1,4 @@
 const express = require('express');
-const { escapeAttrValue } = require('xss');
 const PickupsService = require('./pickups-service');
 
 const pickupsRouter = express.Router();
