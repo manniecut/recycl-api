@@ -43,6 +43,10 @@ The users endpoint is used for creating, reading, updating, and deleting users. 
 The recyclables endpoint is used for retrieving the various recyclable materials within the Recycl app. These materials are stored in their own table in the database to easily add more materials that might not be available at first.
  - GET `/api/recyclables`\
  This endpoint will return all of the recyclables in the database. Useful for the recyclable select page.
+  - POST `/api/recyclables`\
+ This endpoint will allow the addition of new recyclable categories in the database.
+ - DELETE `/api/recyclables/:recyclable`\
+ This endpoint allows the the removal of recyclable categories for admin purposes.
 
 ### Pickups:
 The messages endpoint is used for creating, reading, and deleting messages. Messages are an important part of GutHub because they allow you to communicate recipes easily with your co-cookers.
